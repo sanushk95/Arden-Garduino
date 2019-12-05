@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <title>Arden | Sensor Summary</title>
+</head>
+<body>
+    <header>
+        <img src="images/logo/Arden Logo Design Final.svg" class="logo">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#register">Register</a></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    </header>
+
+    <div class="pxImage1 parentContainer">
+        <section id="appContainer">
+            <div class="plant-image">
+                <img src="https://images.unsplash.com/photo-1512428813834-c702c7702b78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9" alt="plant image">
+            </div>
+            <div class="plant-details">
+                <h3 class="plant-name">Ficus</h3>
+                <div class="sensorReadingButtons">
+                    <a href="#" id="modal-btn"><img src="./images/icons/water-drop.svg"><span><br>Moisture</span></a>
+                    <a href="#"><img src="./images/icons/temperature-measure.svg"><span><br>Temperature</span></a>
+                    <a href="#"><img src="./images/icons/sun.svg"><span><br>Light</span></a>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse purus nunc, ultrices hendrerit mauris eget, euismod ullamcorper dui. Phasellus lacus lorem, dignissim ut gravida ac, imperdiet vel tortor. Nulla ligula ante, vehicula sit amet lacus eget, dignissim pretium tellus. Pellentesque mattis felis lobortis diam tincidunt, a volutpat lectus pharetra. Sed ac felis ac tellus tempus mollis. Maecenas in pharetra massa. Etiam eu vulputate purus. Ut molestie lectus a libero cursus sollicitudin eget vulputate sem. Nullam nec ipsum erat. Vivamus dapibus risus id lectus commodo ullamcorper. Cras aliquet, dui et tempus blandit, justo libero tempus metus, nec tristique enim ligula ut massa. Nulla tempor cursus ultrices. Donec cursus volutpat mauris, in accumsan tellus fermentum vel. Praesent eget nisi imperdiet, condimentum ipsum ac, rhoncus lacus. Donec eu maximus massa.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" id="closeBtn">&times;</span>
+            <section id="modalHead">
+                <h2>Modal</h2>
+            </section>
+            <section id="modalBody">
+                <h2>Chart Here</h2>
+            </section>
+        </div>
+    </div>
+
+    <!-- <div class="pxImage1 parentContainer">
+        <section id="appContainer">
+            <section class="box box1"></section>
+            <section class="box box2"></section>
+            <section class="box box3"></section>
+
+        </section>
+    </div> -->
+
+    <script>
+        // Get DOM Elements
+        const modalBtn = document.querySelector('#modal-btn');
+        const modal = document.querySelector('#myModal');
+        const closeBtn = document.getElementById("closeBtn");
+
+        // Open
+        function openModal() {
+            modal.style.display = 'block';
+        }
+
+        // Close
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Close If Outside Click
+        function outsideClick(e) {
+            if (e.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Events
+        modalBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+        window.addEventListener('click', outsideClick);
+    </script>
+</body>
+</html>
